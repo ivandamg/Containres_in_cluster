@@ -78,8 +78,10 @@ Steps:
 5. Run Braker3
 
 
-2. Trim and align your RNA-seq data to your genome with HISAT2
+2. Trim data with fastp and align your RNA-seq data to your genome with HISAT2
 https://www.reneshbedre.com/blog/hisat2-sequence-aligner.html
+
+
 
            1. Build index on genome assembly
 
