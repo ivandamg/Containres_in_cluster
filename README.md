@@ -58,9 +58,9 @@ if need to dot the same for hap2 the folder is /data/projects/p782_RNA_seq_Argan
 
 3. Repeat masker
 
-              sbatch --partition=pibu_el8 --job-name=RMaskHap1 --time=4-10:00:00 --mem-per-cpu=10G --ntasks=12 --cpus-per-task=1 --output=hap1RepeatMask.out --error=hap1RepeatMask.err --mail-type=END,FAIL --wrap "cd /data/projects/p782_RNA_seq_Argania_spinosa/21_GenomeAnnotation/01_RepeatMasker/01_Hap1; export APPTAINER_TMPDIR=/data/users/imateusgonzalez; export APPTAINER_CACHEDIR=/data/users/imateusgonzalez; export APPTAINER_BIND=/data ; apptainer run docker://dfam/tetools:latest RepeatMasker hap1.fasta hap1_DB-families.fa -xsmall -pa 12"
+              sbatch --partition=pibu_el8 --job-name=RMaskHap1 --time=1-10:00:00 --mem-per-cpu=10G --ntasks=36 --cpus-per-task=1 --output=hap1RepeatMask.out --error=hap1RepeatMask.err --mail-type=END,FAIL --wrap "cd /data/projects/p782_RNA_seq_Argania_spinosa/21_GenomeAnnotation/01_RepeatMasker/01_Hap1; export APPTAINER_TMPDIR=/data/users/imateusgonzalez; export APPTAINER_CACHEDIR=/data/users/imateusgonzalez; export APPTAINER_BIND=/data ; apptainer run docker://dfam/tetools:latest RepeatMasker -lib hap1_DB-families.fa -xsmall -pa 36 -gff -dir MaskerOutput hap1.fasta"
 
-                sbatch --partition=pibu_el8 --job-name=RMaskHap2 --time=1-10:00:00 --mem-per-cpu=10G --ntasks=12 --cpus-per-task=1 --output=hap2RepeatMask.out --error=hap2RepeatMask.err --mail-type=END,FAIL --wrap "cd /data/projects/p782_RNA_seq_Argania_spinosa/21_GenomeAnnotation/01_RepeatMasker/02_Hap2; export APPTAINER_TMPDIR=/data/users/imateusgonzalez; export APPTAINER_CACHEDIR=/data/users/imateusgonzalez; export APPTAINER_BIND=/data ; apptainer run docker://dfam/tetools:latest RepeatMasker hap2.fasta hap2_DB-families.fa -xsmall -pa 12"
+                sbatch --partition=pibu_el8 --job-name=RMaskHap2 --time=1-10:00:00 --mem-per-cpu=10G --ntasks=36 --cpus-per-task=1 --output=hap2RepeatMask.out --error=hap2RepeatMask.err --mail-type=END,FAIL --wrap "cd /data/projects/p782_RNA_seq_Argania_spinosa/21_GenomeAnnotation/01_RepeatMasker/02_Hap2; export APPTAINER_TMPDIR=/data/users/imateusgonzalez; export APPTAINER_CACHEDIR=/data/users/imateusgonzalez; export APPTAINER_BIND=/data ; apptainer run docker://dfam/tetools:latest RepeatMasker -lib hap2_DB-families.fa -xsmall -pa 36 -gff -dir MaskerOutput hap2.fasta"
 
 
 # BRAKER 3
