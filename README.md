@@ -85,7 +85,9 @@ https://www.reneshbedre.com/blog/hisat2-sequence-aligner.html
 
            1. Build index on genome assembly
 
-                      sbatch --partition=pibu_el8 --job-name=H1Hisatindex --time=0-21:00:00 --mem-per-cpu=16G --ntasks=12 --cpus-per-task=1 --output=Hap1_HiSat2index.log --error=Hap1_HiSat2index.err --mail-type=END,FAIL --wrap "cd /data/projects/p782_RNA_seq_Argania_spinosa/21_GenomeAnnotation/02_HISAT2_mapping/01_Hap1; module load HISAT2; hisat2-build hap1.fasta.masked hap1_hisat_index -p 12"
+                      sbatch --partition=pibu_el8 --job-name=H1Hisatindex --time=0-21:00:00 --mem-per-cpu=16G --ntasks=12 --cpus-per-task=1 --output=Hap1_HiSat2index.log --error=Hap1_HiSat2index.err --mail-type=END,FAIL --wrap "cd /data/projects/p782_RNA_seq_Argania_spinosa/50_FinalArgan/04_RNAseqMapping/01_hap1; module load HISAT2; hisat2-build out_JBAT_hap1.FINAL.fa.mod.MAKER.softmasked hap1_hisat_index -p 12"
+
+                   sbatch --partition=pibu_el8 --job-name=H2Hisatindex --time=0-21:00:00 --mem-per-cpu=16G --ntasks=12 --cpus-per-task=1 --output=Hap2_HiSat2index.log --error=Hap2_HiSat2index.err --mail-type=END,FAIL --wrap "cd /data/projects/p782_RNA_seq_Argania_spinosa/50_FinalArgan/04_RNAseqMapping/02_hap2; module load HISAT2; hisat2-build out_JBAT_hap2.FINAL.fa.mod.MAKER.softmasked hap2_hisat_index -p 12"
 
    2. Map reads to genome
 
